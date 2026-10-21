@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: pdfword-pro-api
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: FRONTEND_ORIGINS
+        sync: false
+      - key: PDFWORD_WORKER_MEMORY_MIB
+        value: "768"
